@@ -1,0 +1,17 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "asd-ste100-skill",
+  "description": "ASD-STE100 Simplified Technical English skill for Claude Code.",
+  "owner": {
+    "name": "Somasundar Venkatesh",
+    "url": "https://github.com/somasundarv"
+  },
+  "plugins": [
+    {
+      "name": "asd-ste100",
+      "description": "Rewrite or draft text in ASD-STE100 Simplified Technical English.",
+      "source": "./",
+      "category": "productivity"
+    }
+  ]
+}

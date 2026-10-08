@@ -19,31 +19,42 @@ Triggers on: "STE", "Simplified Technical English", "ASD-STE100", or a
 request to write/rewrite a maintenance or ops procedure in unambiguous
 English.
 
-Details and rule tables: [`asd-ste100/SKILL.md`](asd-ste100/SKILL.md).
+Details and rule tables: [`skills/asd-ste100/SKILL.md`](skills/asd-ste100/SKILL.md).
 
 ## Installation
 
-Skills can be installed per-user (all projects) or per-project.
+Three ways to install, pick one.
 
-### Per-user (all projects)
+### Option A: plugin marketplace (recommended)
+
+This repo is also a Claude Code plugin marketplace (`.claude-plugin/marketplace.json`).
+
+```
+/plugin marketplace add somasundarv/asd-ste100-skill
+/plugin install asd-ste100@asd-ste100-skill
+```
+
+Updates land with `/plugin marketplace update asd-ste100-skill` + `/plugin update asd-ste100`.
+
+### Option B: per-user skill (all projects, no plugin system)
 
 ```bash
 git clone https://github.com/somasundarv/asd-ste100-skill.git
-cp -r asd-ste100-skill/asd-ste100 ~/.claude/skills/asd-ste100
+cp -r asd-ste100-skill/skills/asd-ste100 ~/.claude/skills/asd-ste100
 ```
 
 Or symlink instead of copy, to pick up future `git pull` updates:
 
 ```bash
-ln -s "$(pwd)/asd-ste100-skill/asd-ste100" ~/.claude/skills/asd-ste100
+ln -s "$(pwd)/asd-ste100-skill/skills/asd-ste100" ~/.claude/skills/asd-ste100
 ```
 
-### Per-project
+### Option C: per-project skill
 
 ```bash
 git clone https://github.com/somasundarv/asd-ste100-skill.git
 mkdir -p .claude/skills
-cp -r asd-ste100-skill/asd-ste100 .claude/skills/asd-ste100
+cp -r asd-ste100-skill/skills/asd-ste100 .claude/skills/asd-ste100
 ```
 
 ### Verify
@@ -63,8 +74,8 @@ rewrite this in ASD-STE100: <your text>
 ## Adding a new skill to this repo
 
 ```bash
-mkdir my-skill
-cat > my-skill/SKILL.md <<'EOF'
+mkdir skills/my-skill
+cat > skills/my-skill/SKILL.md <<'EOF'
 ---
 name: my-skill
 version: 1.0.0
@@ -82,7 +93,7 @@ allowed-tools:
 
 Instructions go here.
 EOF
-git add my-skill && git commit -m "Add my-skill"
+git add skills/my-skill && git commit -m "Add my-skill"
 ```
 
 ## License
