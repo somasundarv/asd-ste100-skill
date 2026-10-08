@@ -1,20 +1,19 @@
-# claude-skills
+# asd-ste100-skill
 
-Personal [Claude Code](https://claude.com/claude-code) skills.
+A [Claude Code](https://claude.com/claude-code) skill that rewrites or drafts
+text in ASD-STE100 (Simplified Technical English).
 
 A skill is a folder with a `SKILL.md` file: YAML frontmatter (`name`,
 `description`, `allowed-tools`, ...) plus Markdown instructions. Claude Code
 loads the frontmatter at session start and pulls in the full instructions
 when the task matches the `description`.
 
-## Skills
+## What it does
 
-### asd-ste100
-
-Rewrites or drafts text in **ASD-STE100** (Simplified Technical English) —
-the aerospace/defense controlled-language standard used for maintenance and
-operational procedure docs: active voice, simple tenses, one instruction per
-sentence, a fixed ~900-word approved vocabulary, numbered steps.
+**ASD-STE100** is the aerospace/defense controlled-language standard used
+for maintenance and operational procedure docs: active voice, simple tenses,
+one instruction per sentence, a fixed ~900-word approved vocabulary,
+numbered steps.
 
 Triggers on: "STE", "Simplified Technical English", "ASD-STE100", or a
 request to write/rewrite a maintenance or ops procedure in unambiguous
@@ -29,22 +28,22 @@ Skills can be installed per-user (all projects) or per-project.
 ### Per-user (all projects)
 
 ```bash
-git clone https://github.com/somasundarv/claude-skills.git
-cp -r claude-skills/asd-ste100 ~/.claude/skills/asd-ste100
+git clone https://github.com/somasundarv/asd-ste100-skill.git
+cp -r asd-ste100-skill/asd-ste100 ~/.claude/skills/asd-ste100
 ```
 
 Or symlink instead of copy, to pick up future `git pull` updates:
 
 ```bash
-ln -s "$(pwd)/claude-skills/asd-ste100" ~/.claude/skills/asd-ste100
+ln -s "$(pwd)/asd-ste100-skill/asd-ste100" ~/.claude/skills/asd-ste100
 ```
 
 ### Per-project
 
 ```bash
-git clone https://github.com/somasundarv/claude-skills.git
+git clone https://github.com/somasundarv/asd-ste100-skill.git
 mkdir -p .claude/skills
-cp -r claude-skills/asd-ste100 .claude/skills/asd-ste100
+cp -r asd-ste100-skill/asd-ste100 .claude/skills/asd-ste100
 ```
 
 ### Verify
